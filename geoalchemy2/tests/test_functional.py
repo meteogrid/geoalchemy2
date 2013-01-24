@@ -218,5 +218,3 @@ class CallFunctionTestWithSRID(unittest.TestCase):
         r4 = session.query(Lake_4326).filter(
                 func.ST_Within('POINT(0 0)',
                                           Lake_4326.geom.ST_Buffer(2))).one()
-        ok_(isinstance(r4, Lake_4326))
-        eq_(r4.id, lake_id)
